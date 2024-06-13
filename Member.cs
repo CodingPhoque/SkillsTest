@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -45,19 +46,49 @@ namespace SkillsTest
         public List<Dog> Dog
         { get; set; }
 
+        // Opgave 6
+        public int Age
+            { get
+                { return DateTime.Now.Year - BirthDate.Year; }
+            }
+
+        // Opgave 6
+        public double MemberFee(double baseFee)
+        {
+            double totalFee = baseFee;
+            // Over 65
+            if (Dog.Count > 0 && Age >= 65)
+            {
+                totalFee += 0.5 * baseFee;
+            }
+            // Fuld pris første hund
+            else if (Dog.Count > 0) 
+            {
+                totalFee += baseFee;
+            }
+            for (int i = 1; i < Dog.Count; i++)
+            {
+                totalFee += 0.5 * baseFee;
+            }
+
+            return totalFee;
+        }   
+
+
+
         // ToString Method
         public override string ToString()
         {
             return $"ID: {ID}, Name: {Name}, Address: {Address}, Birth date: {BirthDate}, Phone: {Phone}, Email: {Email}";
         }
 
-        // Create
+        // Opgave 4: Create
         public void RegisterDog(Dog dog)
-        {
+            {
             Dog.Add(dog);
         }
 
-        
+        // Opgave 4
         public void PrintDogs()
         {
             foreach (Dog dog in Dog)
@@ -67,7 +98,7 @@ namespace SkillsTest
         }
 
         
-        // Remove
+        // Opgave 4: Remove
         public bool RemoveDog(Dog dog)
         {
             return Dog.Remove(dog); 

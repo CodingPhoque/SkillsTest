@@ -14,9 +14,9 @@
             Console.WriteLine($"{dog2}");
             Console.WriteLine($"{dog3}");
 
-            Member member1 = new Member(1, "Jens Peter", "Zealand Roskilde",DateTime.Now,"+4512345678", "jenspeter@zealand.dk");
-            Member member2 = new Member(2, "Jakob", "Zealand Roskilde", DateTime.Now, "+4587654321", "jakob@zealand.dk");
-            Member member3 = new Member(3, "Mikkel", "Køge", DateTime.Now, "+4521345678", "mikkel@zealand.dk");
+            Member member1 = new Member(1, "Jens Peter", "Zealand Roskilde",new DateTime(1958,6,20),"+4512345678", "jenspeter@zealand.dk");
+            Member member2 = new Member(2, "Jakob", "Zealand Roskilde", new DateTime(1976,3,15), "+4587654321", "jakob@zealand.dk");
+            Member member3 = new Member(3, "Mikkel", "Køge", new DateTime(1997,4,7), "+4521345678", "mikkel@zealand.dk");
 
             Console.WriteLine();
             Console.WriteLine("Opgave 3");
@@ -41,6 +41,18 @@
             Console.WriteLine("Liste af hunde efter fjernelse af Pluto:");
             member1.PrintDogs();
             member2.PrintDogs();
+
+            Console.WriteLine();
+            Console.WriteLine("Opgave 6");
+            Console.WriteLine("Test af aldersberegning");
+            Console.WriteLine($"{member1.Name} is {member1.Age} years old.");
+            Console.WriteLine($"{member2.Name} is {member2.Age} years old.");
+            Console.WriteLine($"{member3.Name} is {member3.Age} years old.");
+
+            Console.WriteLine();
+            Console.WriteLine("Test af Memberfee");
+
+
         }
     }
 }
