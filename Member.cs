@@ -104,5 +104,30 @@ namespace SkillsTest
         {
             return Dog.Remove(dog); 
         }
+
+        //Opgave 7: Validate
+        public bool Validate()
+        {
+            if (Age < 18)
+            {
+                Console.WriteLine("Fejl: Medlemmet skal være mindst 18 år gammel.");
+                return false;
+            }
+
+            
+            if (
+                string.IsNullOrEmpty(Name) || 
+                string.IsNullOrEmpty(Address) ||
+                string.IsNullOrEmpty(Phone) || 
+                string.IsNullOrEmpty(Email)
+                )
+            {
+                Console.WriteLine("Fejl: Alle oplysninger skal udfyldes som følgende: (Navn, Adresse, Telefon, Email).");
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }
