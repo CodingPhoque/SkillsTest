@@ -29,7 +29,7 @@
             Console.WriteLine($"{member4}");
             Console.WriteLine($"{member5}");
 
-
+            
             member1.RegisterDog(dog1);
             member1.RegisterDog(dog2);
             member2.RegisterDog(dog1);
@@ -45,8 +45,8 @@
             member2.PrintDogs();
 
             member1.RemoveDog(dog1);
-
-            Console.WriteLine("Liste af hunde efter fjernelse af Pluto:");
+            Console.WriteLine();
+            Console.WriteLine("Liste af hunde efter fjernelse af første Pluto:");
             member1.PrintDogs();
             member2.PrintDogs();
             member3.PrintDogs();
@@ -66,7 +66,7 @@
             Console.WriteLine($"{member2.Name} med 2 hund, 46 år, pris: {member2.MemberFee(1000)} DKK, halv pris opnået på hund nr2");
             Console.WriteLine($"{member3.Name} med 1 hunde, 27 år, pris: {member3.MemberFee(1000)} DKK");
 
-            Console.WriteLine();
+            /*Console.WriteLine();
             Console.WriteLine("Opgave 7");
             Console.WriteLine("Validering af data");
             Console.WriteLine($"{member1.Name} - Validering: {member1.Validate()}");
@@ -74,6 +74,43 @@
             Console.WriteLine($"{member3.Name} - Validering: {member3.Validate()}");
             Console.WriteLine($"{member4.Name} - Validering: {member4.Validate()}");
             Console.WriteLine($"{member5.Name} - Validering: {member5.Validate()}");
+            */
+            Console.WriteLine();
+            Console.WriteLine("Opgave 8");
+            Console.WriteLine("Exception handling");
+            Console.WriteLine();
+            Console.WriteLine("Test af medlem 3");
+            try
+            {
+                member3.Validate();
+                Console.WriteLine("Medlem valideret succesfuldt.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.WriteLine();
+            Console.WriteLine("Test af medlem 4");
+            try
+            {
+                member4.Validate();
+                Console.WriteLine("Medlem valideret succesfuldt.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.WriteLine();
+            Console.WriteLine("Test af medlem 5");
+            try
+            {
+                member5.Validate();
+                Console.WriteLine("Medlem valideret succesfuldt.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

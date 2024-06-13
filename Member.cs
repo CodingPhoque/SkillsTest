@@ -106,7 +106,7 @@ namespace SkillsTest
         }
 
         //Opgave 7: Validate
-        public bool Validate()
+        /*public bool Validate()
         {
             if (Age < 18)
             {
@@ -115,7 +115,8 @@ namespace SkillsTest
             }
 
             
-            if (
+            if 
+                (
                 string.IsNullOrEmpty(Name) || 
                 string.IsNullOrEmpty(Address) ||
                 string.IsNullOrEmpty(Phone) || 
@@ -127,6 +128,28 @@ namespace SkillsTest
             }
 
             return true;
+        }*/
+
+        //Opgave 8: Exception handling
+        public void Validate()
+        {
+            // Check for age
+            if (Age < 18)
+            {
+                throw new Exception("Fejl: Medlemmet skal være mindst 18 år gammel.");
+            }
+
+            // Check if required fields are filled
+            if 
+                (
+                string.IsNullOrEmpty(Name) || 
+                string.IsNullOrEmpty(Address) ||
+                string.IsNullOrEmpty(Phone) || 
+                string.IsNullOrEmpty(Email)
+                )
+            {
+                throw new Exception("Fejl: Alle oplysninger skal udfyldes som følgende (Navn, Adresse, Telefon, Email).");
+            }
         }
 
     }
