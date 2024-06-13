@@ -27,7 +27,11 @@
 
           
             member1.RegisterDog(dog1);
+            member1.RegisterDog(dog2);
+            member2.RegisterDog(dog1);
             member2.RegisterDog(dog2);
+            member3.RegisterDog(dog3);
+
 
             Console.WriteLine();
             Console.WriteLine("Opgave 4");
@@ -41,6 +45,7 @@
             Console.WriteLine("Liste af hunde efter fjernelse af Pluto:");
             member1.PrintDogs();
             member2.PrintDogs();
+            member3.PrintDogs();
 
             Console.WriteLine();
             Console.WriteLine("Opgave 6");
@@ -51,7 +56,9 @@
 
             Console.WriteLine();
             Console.WriteLine("Test af Memberfee");
-
+            Console.WriteLine($"{member1.Name} med 1 hunde, 65 år, grundgebyr 1000: {member1.MemberFee(1000)}");
+            Console.WriteLine($"{member2.Name} med 2 hund, 46 år, grundgebyr 1000: {member2.MemberFee(1000)}");
+            Console.WriteLine($"{member3.Name} med 1 hunde, 27 år, grundgebyr 1000: {member3.MemberFee(1000)}");
 
         }
     }

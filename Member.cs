@@ -59,13 +59,14 @@ namespace SkillsTest
             // Over 65
             if (Dog.Count > 0 && Age >= 65)
             {
-                totalFee += 0.5 * baseFee;
+                totalFee = 0.5 * baseFee;
             }
             // Fuld pris første hund
             else if (Dog.Count > 0) 
             {
-                totalFee += baseFee;
+                totalFee = baseFee;
             }
+            // Halv pris på efterfølgende
             for (int i = 1; i < Dog.Count; i++)
             {
                 totalFee += 0.5 * baseFee;
